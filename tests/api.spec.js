@@ -1,12 +1,12 @@
 const { test, expect } = require('@playwright/test');
 
 var user_id ;
-test('get user',async ({ request }) => {
+test('get user CI/CD',async ({ request }) => {
     const response = await request.get('https://reqres.in/api/users');
 
     expect(response.status()).toBe(200);
 })
-test('create user',async ({ request }) => {
+test('create user CI/CD',async ({ request }) => {
     const response = await request.post('https://reqres.in/api/users',
     {
         data:{"name":"morpheus","job":"leader"},
@@ -19,7 +19,7 @@ test('create user',async ({ request }) => {
     user_id = res.id;
 })
 
-test('delete user',async ({ request }) => {
+test('delete user CI/CD',async ({ request }) => {
     const response = await request.delete('https://reqres.in/api/users/'+user_id,);
 
     expect(response.status()).toBe(204);
